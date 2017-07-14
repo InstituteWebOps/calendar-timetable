@@ -4,6 +4,7 @@ import android.content.ComponentName;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.provider.CalendarContract;
 import android.support.v7.widget.CardView;
@@ -43,6 +44,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         holder.tv_day.setText((String)day_dataset.get(position));
         holder.tv_date.setText((String)date_dataset.get(position));
         holder.tv_desc.setText((String)desc_dataset.get(position));
+
+        if(day_dataset.get(position).equals("Sun")  ||  day_dataset.get(position).equals("Sat"))
+            holder.cardView.setCardBackgroundColor(Color.parseColor("#ba68c8"));//violet color
+        else
+            holder.cardView.setCardBackgroundColor(Color.parseColor("#FFFFFFFF"));
+
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
