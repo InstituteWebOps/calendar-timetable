@@ -41,7 +41,7 @@ public class AprilFragment extends Fragment {
 
         RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.rv_april);
         rv.setHasFixedSize(true);
-        RecyclerAdapter adapter = new RecyclerAdapter(april_day_list,april_date_list,april_desc_list);
+        RecyclerAdapter adapter = new RecyclerAdapter(april_day_list,april_date_list,april_desc_list,getActivity());
         rv.setAdapter(adapter);
 
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());

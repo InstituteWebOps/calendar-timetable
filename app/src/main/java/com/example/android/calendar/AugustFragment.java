@@ -40,7 +40,7 @@ public class AugustFragment extends Fragment {
 
         RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.rv_august);
         rv.setHasFixedSize(true);
-        RecyclerAdapter adapter = new RecyclerAdapter(aug_day_list,aug_date_list,aug_desc_list);
+        RecyclerAdapter adapter = new RecyclerAdapter(aug_day_list,aug_date_list,aug_desc_list,getActivity());
         rv.setAdapter(adapter);
 
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());

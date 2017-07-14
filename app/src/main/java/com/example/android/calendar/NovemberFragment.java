@@ -39,7 +39,7 @@ public class NovemberFragment extends Fragment {
 
         RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.rv_november);
         rv.setHasFixedSize(true);
-        RecyclerAdapter adapter = new RecyclerAdapter(nov_day_list,nov_date_list,nov_desc_list);
+        RecyclerAdapter adapter = new RecyclerAdapter(nov_day_list,nov_date_list,nov_desc_list,getActivity());
         rv.setAdapter(adapter);
 
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());

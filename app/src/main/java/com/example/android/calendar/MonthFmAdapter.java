@@ -4,11 +4,15 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import java.util.Calendar;
+
 /**
  * Created by harshitha on 8/6/17.
  */
 
 public class MonthFmAdapter extends FragmentPagerAdapter {
+
+    public static int monthForRecyclerView,yearForRecyclerView;
 
     public MonthFmAdapter(FragmentManager fm){
 
@@ -17,40 +21,54 @@ public class MonthFmAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        if (position == 0) {
+        int current = position % 12;
+        monthForRecyclerView = current+5;
+        if (current == 0) {
+            yearForRecyclerView=2017;
             return new JulyFragment();
         }
-        else if (position == 1) {
+        else if (current == 1) {
+            yearForRecyclerView=2017;
             return new AugustFragment();
         }
-        else if (position==2){
+        else if (current==2){
+            yearForRecyclerView=2017;
             return new SeptemberFragment();
         }
-        else if (position == 3) {
+        else if (current == 3) {
+            yearForRecyclerView=2017;
             return new OctoberFragment();
         }
-        else if (position==4){
+        else if (current==4){
+            yearForRecyclerView=2017;
             return new NovemberFragment();
         }
-        else if (position == 5) {
+        else if (current == 5) {
+            yearForRecyclerView=2017;
             return new DecemberFragment();
         }
-        else if (position==6){
+        else if (current==6){
+            yearForRecyclerView=2018;
             return new JanuaryFragment();
         }
-        else if (position == 7) {
+        else if (current == 7) {
+            yearForRecyclerView=2018;
             return new FebruaryFragment();
         }
-        else if (position==8){
+        else if (current==8){
+            yearForRecyclerView=2018;
             return new MarchFragment();
         }
-        else if (position == 9) {
+        else if (current == 9) {
+            yearForRecyclerView=2018;
             return new AprilFragment();
         }
-        else if (position==10){
+        else if (current==10){
+            yearForRecyclerView=2018;
             return new MayFragment();
         }
-        else if (position == 11) {
+        else if (current == 11) {
+            yearForRecyclerView=2018;
             return new JuneFragment();
         }
         else return null;
@@ -60,6 +78,6 @@ public class MonthFmAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount()
     {
-        return 12;
+        return Integer.MAX_VALUE;
     }
 }

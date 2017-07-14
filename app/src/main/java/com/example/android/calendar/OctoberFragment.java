@@ -40,7 +40,7 @@ public class OctoberFragment extends Fragment {
 
         RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.rv_october);
         rv.setHasFixedSize(true);
-        RecyclerAdapter adapter = new RecyclerAdapter(oct_day_list,oct_date_list,oct_desc_list);
+        RecyclerAdapter adapter = new RecyclerAdapter(oct_day_list,oct_date_list,oct_desc_list,getActivity());
         rv.setAdapter(adapter);
 
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());

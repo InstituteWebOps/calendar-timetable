@@ -8,18 +8,20 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import java.util.Calendar;
+
 public class MainActivity extends AppCompatActivity {
     //RecyclerView recyclerView;
    // RecyclerView.Adapter recyclerAdapter;
     //RecyclerView.LayoutManager layoutManager;
-
+    int currentMonth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
-
+        currentMonth = Calendar.getInstance().get(Calendar.MONTH);
         // Find the view pager that will allow the user to swipe between fragments
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
 
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the adapter onto the view pager
         viewPager.setAdapter(adapter);
-
+        viewPager.setCurrentItem(currentMonth-6);
       //  recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         //layoutManager = new LinearLayoutManager(this);
         //recyclerView.setLayoutManager(layoutManager);

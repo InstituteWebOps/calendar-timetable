@@ -39,7 +39,7 @@ public class SeptemberFragment extends Fragment {
 
         RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.rv_september);
         rv.setHasFixedSize(true);
-        RecyclerAdapter adapter = new RecyclerAdapter(sept_day_list,sept_date_list,sept_desc_list);
+        RecyclerAdapter adapter = new RecyclerAdapter(sept_day_list,sept_date_list,sept_desc_list,getActivity());
         rv.setAdapter(adapter);
 
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
