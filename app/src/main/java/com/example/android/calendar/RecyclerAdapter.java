@@ -55,7 +55,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             @Override
             public void onClick(View v) {
                 Calendar beginTime = Calendar.getInstance();
-                beginTime.set(MonthFmAdapter.yearForRecyclerView,MonthFmAdapter.monthForRecyclerView,position+1);
+                beginTime.set(MainActivity.yearForRecyclerView,MainActivity.monthForRecyclerView,position+1);
                 // A date-time specified in milliseconds since the epoch.
                 long hr = beginTime.getTimeInMillis();
 

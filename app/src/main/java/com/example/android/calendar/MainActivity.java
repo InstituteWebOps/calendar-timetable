@@ -20,6 +20,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
+
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
    // RecyclerView.Adapter recyclerAdapter;
     //RecyclerView.LayoutManager layoutManager;
     int currentMonth;
+    public static int monthForRecyclerView=Calendar.getInstance().get(Calendar.MONTH),yearForRecyclerView=2017;
     private long CalID;
     private String[] months = {"january", "february", "march", "april", "may", "june", "july", "august", "september",
             "october", "november", "december"};
@@ -56,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
         currentMonth = Calendar.getInstance().get(Calendar.MONTH);
+        //monthForRecyclerView = currentMonth;
         // Find the view pager that will allow the user to swipe between fragments
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
 
@@ -65,6 +69,25 @@ public class MainActivity extends AppCompatActivity {
         // Set the adapter onto the view pager
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(currentMonth-6);
+        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                int current = position % 12;
+                monthForRecyclerView = current+6;
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
       //  recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         //layoutManager = new LinearLayoutManager(this);
         //recyclerView.setLayoutManager(layoutManager);
