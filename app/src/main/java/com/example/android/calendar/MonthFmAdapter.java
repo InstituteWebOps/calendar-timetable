@@ -4,53 +4,60 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import java.util.Calendar;
+
 /**
  * Created by harshitha on 8/6/17.
  */
 
 public class MonthFmAdapter extends FragmentPagerAdapter {
 
+
+
     public MonthFmAdapter(FragmentManager fm){
 
         super(fm);
     }
 
+
+
     @Override
     public Fragment getItem(int position) {
-        if (position == 0) {
+        int current = position % 12;
+        if (current == 0) {
             return new JulyFragment();
         }
-        else if (position == 1) {
+        else if (current == 1) {
             return new AugustFragment();
         }
-        else if (position==2){
+        else if (current==2){
             return new SeptemberFragment();
         }
-        else if (position == 3) {
+        else if (current == 3) {
             return new OctoberFragment();
         }
-        else if (position==4){
+        else if (current==4){
             return new NovemberFragment();
         }
-        else if (position == 5) {
+        else if (current == 5) {
             return new DecemberFragment();
         }
-        else if (position==6){
+        else if (current==6){
             return new JanuaryFragment();
         }
-        else if (position == 7) {
+        else if (current == 7) {
             return new FebruaryFragment();
         }
-        else if (position==8){
+        else if (current==8){
             return new MarchFragment();
         }
-        else if (position == 9) {
+        else if (current == 9) {
             return new AprilFragment();
         }
-        else if (position==10){
+        else if (current==10){
             return new MayFragment();
         }
-        else if (position == 11) {
+        else if (current == 11) {
             return new JuneFragment();
         }
         else return null;
@@ -60,6 +67,6 @@ public class MonthFmAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount()
     {
-        return 12;
+        return Integer.MAX_VALUE;
     }
 }

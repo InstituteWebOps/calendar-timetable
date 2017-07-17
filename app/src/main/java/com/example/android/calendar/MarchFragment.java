@@ -43,7 +43,7 @@ public class MarchFragment extends Fragment {
 
         RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.rv_march);
         rv.setHasFixedSize(true);
-        RecyclerAdapter adapter = new RecyclerAdapter(march_day_list,march_date_list,march_desc_list);
+        RecyclerAdapter adapter = new RecyclerAdapter(march_day_list,march_date_list,march_desc_list,getActivity());
         rv.setAdapter(adapter);
 
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());

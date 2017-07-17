@@ -41,7 +41,7 @@ public class JulyFragment extends Fragment {
 
         RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.rv_july);
         rv.setHasFixedSize(true);
-       RecyclerAdapter adapter = new RecyclerAdapter(july_day_list,july_date_list,july_desc_list);
+       RecyclerAdapter adapter = new RecyclerAdapter(july_day_list,july_date_list,july_desc_list,getActivity());
         rv.setAdapter(adapter);
 
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());

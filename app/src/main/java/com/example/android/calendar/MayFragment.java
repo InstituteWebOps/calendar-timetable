@@ -43,7 +43,7 @@ public class MayFragment extends Fragment {
 
         RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.rv_may);
         rv.setHasFixedSize(true);
-        RecyclerAdapter adapter = new RecyclerAdapter(may_day_list,may_date_list,may_desc_list);
+        RecyclerAdapter adapter = new RecyclerAdapter(may_day_list,may_date_list,may_desc_list,getActivity());
         rv.setAdapter(adapter);
 
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
