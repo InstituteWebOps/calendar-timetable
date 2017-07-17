@@ -143,11 +143,11 @@ public class MainActivity extends AppCompatActivity {
                     String disp = "IITM Calendar";
                     String inter = "IITM Calendar";
 
-                    //CalID = Utils.getprefLong("CalID", this);
+                    CalID = Utils.getprefLong("CalID", this);
                     if (CalID == -1) {
                         CalID = insertCalendar(acc, inter, disp);
                         Log.i("CalID", CalID + "");
-                        //Utils.saveprefLong("CalID", CalID, this);
+                        Utils.saveprefLong("CalID", CalID, this);
                     }
 
                     for (int m = 0; m < 12; m++) {
